@@ -42,3 +42,65 @@ println(array2["b"])   // ??? 输出这个Optional("bbb")
 var array3 = []
 var array4 = [String]()
 var array5 = [String:Float]()  // ???这是什么情况
+
+
+// 控制流
+let intArray = [1,2,3,4,5,6,7,8,9]
+for num in intArray {
+    if num % 2 == 0 {
+        //println("双数")
+    }else{
+        //println("单数")
+    }
+}
+var optionString: String? = "hello"
+println(optionString == nil)
+
+// optionString: String? 默认赋值为nil
+if let name = optionString {
+    println("\(name) pw")
+}else{
+    println("it's nil")
+}
+
+// switch语句,必须包含default，不需要break
+let abc = "a"
+switch(abc){
+    case "a":
+        println("a")
+    case "b":
+       println("b")
+    default:
+       println("c")
+    
+}
+
+//遍历字典
+let interestingNumbers = [
+    "Prime": [2, 3, 5, 7, 11, 13],
+    "Fibonacci": [1, 1, 2, 3, 5, 8],
+    "Square": [1, 4, 9, 16, 25],
+]
+for (key, value) in interestingNumbers{
+    print("key=\(key)=>")
+    for num in value{
+        print(num)
+    }
+    println()
+}
+
+// for循环 ,不能用i++,只能++i
+for var i = 0;i<10;++i{
+    print(i)
+}
+// 第二种写法
+for i in 0..<10{
+   print(i)
+}
+// 拓展写法,包含10
+for i in 0...10{
+    print(i)
+}
+
+
+
