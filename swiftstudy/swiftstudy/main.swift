@@ -103,4 +103,54 @@ for i in 0...10{
 }
 
 
+//////////////////函数定义///////////////
+
+
+// 函数定义
+func getUser(name:String , age:Int) -> String{
+    return "name=\(name);age=\(age)"
+}
+println(getUser("pengwei", 18))
+
+// 函数返回多个值
+func calculateStatistics(scores:[Int])->(min:Int,max:Int,sum:Int){
+    var max = scores[0]
+    var min = scores[0]
+    var sum = 0
+    for score in scores{
+        if score > max {
+            max = score
+        }else if score < min{
+            min = score
+        }
+        sum += score
+    }
+    return (min, max, sum)
+}
+var scores = calculateStatistics([5, 3, 100, 3, 9])
+println("max=\(scores.max);sum=\(scores.2)")
+
+// 函数可变参数
+func numSum(sums:Int...)->Int{
+    var sum = 0
+    for num in sums {
+        sum += num
+    }
+    return sum
+}
+println(numSum(1,2,3,4,5))
+
+// 练习：计算平均数
+func average(nums:Int...)->Float{
+    var num = nums.count
+    var sum = nums.reduce(0, combine: +)
+    // 可变参数函数调用求解决方案！！！！
+//     var sum = numSum(nums)
+    return Float(sum/num)
+}
+println(average(1,2,3,4,5))
+
+// 格式化,参考：http://blog.csdn.net/remote_roamer/article/details/7166043
+var string1 = NSString(format:"name=%@,age=%d", "pw", 123)
+println(string1)
 
